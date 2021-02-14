@@ -17,7 +17,7 @@ This version is a fork of the original by David Andruczyk [https://gitlab.com/li
 
 ## Wiring
 
-- **Arduino Uno**
+- **Arduino Uno** and **Arduino Nano**
   - pin `8` will provide the `crank` or primary wheel signal
   - pin `9` will provide the `cam` or secondary wheel signal
 - **Arduino Mega**
