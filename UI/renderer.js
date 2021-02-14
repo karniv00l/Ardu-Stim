@@ -79,14 +79,14 @@ function openSerialPort()
     console.log("Opening serial port: ", e.options[e.selectedIndex].value);
     port = new serialport(e.options[e.selectedIndex].value, { baudRate: 115200 }, function (err) {
         if (err) {
-          console.warn(err.message);
-          return window.alert(err.message);
+          window.alert(`Error while opening serial port: ${err.message}`);
+          throw err;
         }
 
         //Drop the modal dialog until connection is complete
         modalLoading.init(true);
-        initComplete = false;        
-      })
+        initComplete = false;
+      });
 
     //Update the patterns downdown list
     port.on('open', onSerialConnect);
